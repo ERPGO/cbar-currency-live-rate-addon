@@ -1,25 +1,10 @@
 # -*- coding: utf-8 -*-
 from odoo import models, fields, api
 
-CURRENCY_PROVIDER_SELECTION = [
-    ([], 'ecb', 'European Central Bank'),
-    ([], 'xe_com', 'xe.com'),
-    (['AE'], 'cbuae', 'UAE Central Bank'),
-    (['AZ'], 'cbar', 'Central Bank of Azerbaijan'),
-    (['CA'], 'boc', 'Bank Of Canada'),
-    (['CH'], 'fta', 'Federal Tax Administration (Switzerland)'),
-    (['CL'], 'mindicador', 'Chilean mindicador.cl'),
-    (['EG'], 'cbegy', 'Central Bank of Egypt'),
-    (['MX'], 'banxico', 'Mexican Bank'),
-    (['PE'], 'bcrp', 'SUNAT (replaces Bank of Peru)'),
-    (['RO'], 'bnr', 'National Bank Of Romania'),
-    (['TR'], 'tcmb', 'Turkey Republic Central Bank'),
-    (['PL'], 'nbp', 'National Bank of Poland'),
-    (['BR'], 'bbr', 'Central Bank of Brazil'),
-]
-
 class cbar_currency_rate(models.Model):
     _inherit = 'res.company'
+
+    currency_provider = fields.Selection(selection_add=[('cbar', 'Central Bank of Azerbaijan')])
 
     def _parse_cbar_data(self, available_currencies):
         ''' This method is used to update the currencies by using CBA service provider.
