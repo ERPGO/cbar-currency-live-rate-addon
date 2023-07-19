@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 from odoo import models, fields, api
+from lxml import etree
+import requests
 
 class cbar_currency_rate(models.Model):
     _inherit = 'res.company'
