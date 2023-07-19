@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "cbar_currency_rate",
+    'name': "CBAR live currency rate",
 
     'summary': """
         Central Bank of Azerbaijan as a Currency provider""",
@@ -22,7 +22,5 @@
     'depends': ['base','currency_rate_live'],
 
     # always loaded
-    'data': [
-        'views/views.xml',
-    ],
+    'data': [],
 }
